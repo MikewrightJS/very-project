@@ -14,11 +14,10 @@ const ProductOptions = ({title, colours, defaultColour}) => {
     const currentProduct = useSelector(state=>state.selectedProduct)
 
     const dispatch = useDispatch();
-
+    
     useEffect(() => {
         setSelectedColour(defaultColour ? defaultColour.color : '')
 	}, [defaultColour]);
-
     
     const handleColourChange = (event) => {
         setSelectedColour(event.target.value);
