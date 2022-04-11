@@ -6,13 +6,12 @@ import { Box } from '@mui/system';
 import {useSelector} from 'react-redux';
 import Cart from './../Cart';
 
-
 const Header = () => {
-    const basketItems = useSelector(state=>state.basket)
-    const [cartIsOpen, setCartIsOpen] = useState(false)
+    const basketItems = useSelector(state => state.basket);
+    const [cartIsOpen, setCartIsOpen] = useState(false);
     
-    function handleCart(){
-        setCartIsOpen(!cartIsOpen)
+    function handleCart() {
+        setCartIsOpen(!cartIsOpen);
     }
 
     return(
@@ -26,7 +25,7 @@ const Header = () => {
             </div>
             {cartIsOpen && <Cart/>}
         </Box>
-    )
-}
+    );
+};
 
-export default Header
+export default Header;

@@ -1,26 +1,24 @@
 import { render, screen, waitFor, fireEvent } from '@testing-library/react';
-import {createStore} from 'redux'
-import allReducers from '../../Reducers'
-import {Provider} from 'react-redux'
-import Header from '../Header'
-import ProductOptions from '../ProductPage/ProductOptions'
-import products from '../../Data/sampleData.json'
+import {createStore} from 'redux';
+import allReducers from '../../Reducers';
+import {Provider} from 'react-redux';
+import Header from '../Header';
+import ProductOptions from '../ProductPage/ProductOptions';
+import products from '../../Data/sampleData.json';
 
 window.alert = jest.fn();
-
-const store = createStore(allReducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
-
+const store = createStore(allReducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 describe('Cart component', () => {
-      it('Clear basket button empties product from cart', async () => {
-        const {getByText, getByTestId, queryByTestId } = render(<Provider store={store}><ProductOptions title={products.product.title} colours={products.product.colours} defaultColour={products.product.colours[0]}/> <Header/> </Provider>);
+    it('Clear basket button empties product from cart', async () => {
+        const { getByText, getByTestId, queryByTestId } = render(<Provider store={store}><ProductOptions title={products.product.title} colours={products.product.colours} defaultColour={products.product.colours[0]}/> <Header/> </Provider>);
         window.alert.mockClear();
         await waitFor(() => getByText('Nintendo Switch Console'));
         
         const productQuantity = getByTestId('product-quantity');
         fireEvent.change(productQuantity, {target: {value: "3"}});
-        const submitButton = getByText("Add to Basket")
-        fireEvent.click(submitButton)
+        const submitButton = getByText("Add to Basket");
+        fireEvent.click(submitButton);
         const basketIcon = queryByTestId('basket-test');
         fireEvent.click(basketIcon);
 
@@ -35,8 +33,8 @@ describe('Cart component', () => {
         
         const productQuantity = getByTestId('product-quantity');
         fireEvent.change(productQuantity, {target: {value: "3"}});
-        const submitButton = getByText("Add to Basket")
-        fireEvent.click(submitButton)
+        const submitButton = getByText("Add to Basket");
+        fireEvent.click(submitButton);
         const basketIcon = queryByTestId('basket-test');
         fireEvent.click(basketIcon);
 
@@ -51,8 +49,8 @@ describe('Cart component', () => {
         
         const productQuantity = getByTestId('product-quantity');
         fireEvent.change(productQuantity, {target: {value: "3"}});
-        const submitButton = getByText("Add to Basket")
-        fireEvent.click(submitButton)
+        const submitButton = getByText("Add to Basket");
+        fireEvent.click(submitButton);
         const basketIcon = queryByTestId('basket-test');
         fireEvent.click(basketIcon);
 

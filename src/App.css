@@ -2,7 +2,6 @@
   text-align: center;
 }
 
-
 /* MUI Overwrites */
 li.MuiMenuItem-root,.MuiFormControl-root{
   text-transform: capitalize;

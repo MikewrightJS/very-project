@@ -1,10 +1,10 @@
-.header__cart{
+.header__cart {
     position: absolute;
     right: -270px;
     top: 75px;
 }
 
-.cart__items_image{
+.cart__items_image {
     width: 100%;
     height: 170px;
     background-size: contain;
@@ -13,22 +13,22 @@
     overflow: hidden;
 }
 
-.cart__items_info{
+.cart__items_info {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
-.cart__item_title{
+.cart__item_title {
     font-weight: bold;
     text-align: center;
     margin-bottom: 10px;
 }
 
-.cart__items_colour{
+.cart__items_colour {
     text-transform: capitalize;
 }
-.cart__items_actions{
+.cart__items_actions {
     width: 100%;
     display: flex;
     justify-content: space-between;

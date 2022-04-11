@@ -1,4 +1,4 @@
-.header__basket{
+.header__basket {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,11 +7,11 @@
     cursor: pointer;
 }
 
-.header__basket_label{
+.header__basket_label {
     margin-top:10px;
 }
 
-.header__basket_quantity{
+.header__basket_quantity {
     width: 0.4rem;
     height: 0.4rem;
     background: red;
@@ -25,11 +25,11 @@
     top: 0rem;
 }
 
-.header__basket_quantity span{
+.header__basket_quantity span {
     font-size:0.9rem;
 }
 
-.header_container{
+.header_container {
     width: 100%;
      display:flex;
      justify-content: space-between;

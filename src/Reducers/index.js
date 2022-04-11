@@ -5,6 +5,6 @@ import { combineReducers } from "redux";
 const allReducers = combineReducers({
     selectedProduct,
     basket,
-})
+});
 
-export default allReducers
+export default allReducers;

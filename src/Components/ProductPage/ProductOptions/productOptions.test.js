@@ -10,13 +10,13 @@ import axios from "axios";
 
 window.alert = jest.fn();
 jest.mock("axios");
-const store = createStore(allReducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const store = createStore(allReducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 describe('Product component', () => {
     it('Changing the colour variant from select box', async () => {
         const { getByText, getByTestId } = render(<Provider store={store}><ProductOptions title={products.product.title} colours={products.product.colours} defaultColour={products.product.colours[0]}/></Provider>);
-        await waitFor(() => getByText('Nintendo Switch Console'));
         
+        await waitFor(() => getByText('Nintendo Switch Console'));
         const colourDropdown = await waitFor(() => getByTestId('select-colour'));
 
         // click event doesnt work with MUI, so mouseDown is used
@@ -29,34 +29,34 @@ describe('Product component', () => {
      });
 
     it('Increase the quantity of the product', async () => {
-        const {getByTestId} = render(<Provider store={store}><ProductOptions title={products.product.title} colours={products.product.colours} defaultColour={products.product.colours[0]}/></Provider>);
+        const { getByTestId } = render(<Provider store={store}><ProductOptions title={products.product.title} colours={products.product.colours} defaultColour={products.product.colours[0]}/></Provider>);
 		await waitFor(() => getByTestId('product-quantity'));
         const productQuantity = getByTestId('product-quantity');
-        fireEvent.change(productQuantity, {target: {value: "5"}});
+        fireEvent.change(productQuantity, { target: { value: "5" } });
         expect(productQuantity.value).toBe("5");
     });
 
     it('Display an error message if quantity is less than 1', async () => {
-        const {getByText, getByTestId } = render(<Provider store={store}><ProductOptions title={products.product.title} colours={products.product.colours} defaultColour={products.product.colours[0]}/></Provider>);
+        const { getByText, getByTestId } = render(<Provider store={store}><ProductOptions title={products.product.title} colours={products.product.colours} defaultColour={products.product.colours[0]}/></Provider>);
 		await waitFor(() => getByText('Nintendo Switch Console'));
         const productQuantity = getByTestId('product-quantity');
 
-        fireEvent.change(productQuantity, {target: {value: "0"}});
-        const submitButton = getByText("Add to Basket")
+        fireEvent.change(productQuantity, { target: { value: "0" } });
+        const submitButton = getByText("Add to Basket");
 
-        fireEvent.click(submitButton)
+        fireEvent.click(submitButton);
         expect(getByText('Quantity must be over 0')).toBeInTheDocument();
     });
 
     it('Display an error message if quantity is empty', async () => {
-        const {getByText, getByTestId } = render(<Provider store={store}><ProductOptions title={products.product.title} colours={products.product.colours} defaultColour={products.product.colours[0]}/></Provider>);
+        const { getByText, getByTestId } = render(<Provider store={store}><ProductOptions title={products.product.title} colours={products.product.colours} defaultColour={products.product.colours[0]}/></Provider>);
 		await waitFor(() => getByText('Nintendo Switch Console'));
 
         const productQuantity = getByTestId('product-quantity');
-        fireEvent.change(productQuantity, {target: {value: " "}});
-        const submitButton = getByText("Add to Basket")
+        fireEvent.change(productQuantity, { target: { value: " " } });
+        const submitButton = getByText("Add to Basket");
 
-        fireEvent.click(submitButton)
+        fireEvent.click(submitButton);
         expect(getByText('Quantity must be over 0')).toBeInTheDocument();
     });
 
@@ -66,9 +66,9 @@ describe('Product component', () => {
         await waitFor(() => getByText('Nintendo Switch Console'));
         const productQuantity = getByTestId('product-quantity');
 
-        fireEvent.change(productQuantity, {target: {value: "0"}});
-        const submitButton = getByText("Add to Basket")
-        fireEvent.click(submitButton)
+        fireEvent.change(productQuantity, { target: { value: "0" } });
+        const submitButton = getByText("Add to Basket");
+        fireEvent.click(submitButton);
 
         const basketIcon = queryByTestId('basket-test');
         fireEvent.click(basketIcon);
@@ -82,8 +82,8 @@ describe('Product component', () => {
         const productQuantity = getByTestId('product-quantity');
 
         fireEvent.change(productQuantity, {target: {value: " "}});
-        const submitButton = getByText("Add to Basket")
-        fireEvent.click(submitButton)
+        const submitButton = getByText("Add to Basket");
+        fireEvent.click(submitButton);
 
         const basketIcon = queryByTestId('basket-test');
         fireEvent.click(basketIcon);
@@ -97,8 +97,8 @@ describe('Product component', () => {
         const productQuantity = getByTestId('product-quantity');
 
         fireEvent.change(productQuantity, {target: {value: "3"}});
-        const submitButton = getByText("Add to Basket")
-        fireEvent.click(submitButton)
+        const submitButton = getByText("Add to Basket");
+        fireEvent.click(submitButton);
 
         const basketIcon = queryByTestId('basket-test');
         fireEvent.click(basketIcon);
