@@ -106,11 +106,13 @@ describe('Product component', () => {
     });
 
     it('If API is unable to load', async () => {
-        axios.get = jest.fn().mockRejectedValue('Unable to load API');
-        expect(Products()).rejects.toThrowError('Unable to load API');
+        const message = "Network Error";
+        axios.get.mockRejectedValueOnce(new Error(message));
+        expect(Products()).resolves.toEqual(false);
     });
-
+    
     it('If API loads successfully', async () => {
+        axios.get.mockResolvedValueOnce(products);
         axios.get = jest.fn().mockResolvedValue(products);
         expect(Products()).resolves.toEqual(products);
     });
