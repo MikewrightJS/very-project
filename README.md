@@ -20,6 +20,10 @@ Eslint has been installed onto this project for style handling and consistency.
 
 In the project directory, you can run:
 
+### `npm install`
+
+Installs all required dependencies to start the app.
+
 ### `npm start`
 
 Runs the app in the development mode.\
