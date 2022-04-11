@@ -17,11 +17,11 @@ const Header = () => {
 
     return(
         <Box className={styles.header_container}>
-            <img className="header__logo" src={Logo} style={{ height: 58, width: 58 }}
+            <img className="header__logo" loading="lazy" src={Logo} height="58" width="58"
               alt="Very logo"/>
-            <div placeholder='basket' data-testid="basket-test" onClick={handleCart} className={styles.header__basket}>
+            <div placeholder='basket' data-testid="basket-test" onClick={handleCart}  className={styles.header__basket}>
                 {basketItems && <span className={styles.header__basket_quantity}><span>{basketItems.productQuantity}</span></span>}
-                <img className="header__basket_icon" style={{width:24, height:21}} alt="Basket icon" src={Basket}/>
+                <img className="header__basket_icon" loading="lazy" width="24" height="21" alt="Basket icon" src={Basket}/>
                 <span className={styles.header__basket_label}>Basket</span>
             </div>
             {cartIsOpen && <Cart/>}

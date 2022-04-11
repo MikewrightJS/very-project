@@ -20,7 +20,7 @@ const ProductPage = () => {
     
 
     useEffect(() => {
-		  Products()
+		Products()
         .then((response) => {
           if(response){
           setProducts(response.data.product);
@@ -28,8 +28,8 @@ const ProductPage = () => {
           }else{
             setApiError('Unable to load API')
           }
-         })
-	  }, []);
+        })
+	}, []);
   return(
       <Container maxWidth="md">
         {apiError ? 

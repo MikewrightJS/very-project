@@ -21,9 +21,8 @@ const Cart = () => {
   return (
 
     <Card className={styles.header__cart} sx={{ minWidth: 275 }}>
-    {basketItems ? 
-      <CardContent>
-    
+    {!basketItems ? <CardContent>You have no items in your basket</CardContent> :
+    <CardContent>
         <Typography sx={{ fontSize: 18, textAlign:'center' }} color="text.primary" gutterBottom>
             Basket Items
         </Typography>
@@ -44,12 +43,7 @@ const Cart = () => {
             </div>
 
         </div>
-
-      
-      
       </CardContent>
-      :
-      <CardContent>You have no items in your basket</CardContent>
     }
  
        </Card>

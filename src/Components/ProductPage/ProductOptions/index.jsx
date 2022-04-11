@@ -1,5 +1,5 @@
 import React, {useState,useEffect } from 'react';
-import {FormControl, InputLabel,Select,MenuItem,TextField, Button } from '@mui/material';
+import {FormControl,InputLabel, Select, MenuItem, TextField, Button } from '@mui/material';
 import styles from './styles.module.css';
 import {selectedProduct, getBasketItems} from '../../../Actions';
 import {useDispatch, useSelector} from 'react-redux';
@@ -31,7 +31,7 @@ const ProductOptions = ({title, colours, defaultColour}) => {
     }
 
     const getProductByColour = (colours, colour) => {
-		const variant = colours.filter((item) => item.color == colour);
+		const variant = colours.filter((item) => item.color === colour);
         return variant ? variant[0] : false;
 	}
 
@@ -39,13 +39,12 @@ const ProductOptions = ({title, colours, defaultColour}) => {
         if(productQuantity > 0){
             setQuantityHasError(false);
             setQuantityHelperText('')
-            dispatch(getBasketItems({productTitle:title,productQuantity:productQuantity,...currentProduct}))
+            dispatch(getBasketItems({productTitle:title, productQuantity:productQuantity, ...currentProduct}))
             alert(`${selectedColour} and ${productQuantity}`)
         }else{
             setQuantityHasError(true);
             setQuantityHelperText('Quantity must be over 0')
         }
-      
     }
     
     return(

@@ -45,7 +45,7 @@ describe('Product component', () => {
         const submitButton = getByText("Add to Basket")
 
         fireEvent.click(submitButton)
-        expect(getByText('Quantity must be over 0')).toBeInTheDocument;
+        expect(getByText('Quantity must be over 0')).toBeInTheDocument();
     });
 
     it('Display an error message if quantity is empty', async () => {
@@ -57,7 +57,7 @@ describe('Product component', () => {
         const submitButton = getByText("Add to Basket")
 
         fireEvent.click(submitButton)
-        expect(getByText('Quantity must be over 0')).toBeInTheDocument;
+        expect(getByText('Quantity must be over 0')).toBeInTheDocument();
     });
 
     it('Inputting 0 quantity does not insert into basket', async () => {
@@ -72,7 +72,7 @@ describe('Product component', () => {
 
         const basketIcon = queryByTestId('basket-test');
         fireEvent.click(basketIcon);
-        expect(getByText("You have no items in your basket")).toBeInTheDocument;
+        expect(getByText("You have no items in your basket")).toBeInTheDocument();
     });
 
     it('Empty quantity does not insert into basket', async () => {
@@ -87,7 +87,7 @@ describe('Product component', () => {
 
         const basketIcon = queryByTestId('basket-test');
         fireEvent.click(basketIcon);
-        expect(getByText("You have no items in your basket")).toBeInTheDocument;
+        expect(getByText("You have no items in your basket")).toBeInTheDocument();
     });
 
     it('Inserts into basket', async () => {
@@ -102,7 +102,7 @@ describe('Product component', () => {
 
         const basketIcon = queryByTestId('basket-test');
         fireEvent.click(basketIcon);
-        expect(getByText('Proceed')).toBeInTheDocument;
+        expect(getByText('Proceed')).toBeInTheDocument();
     });
 
     it('If API is unable to load', async () => {
