@@ -1,0 +1,37 @@
+.header__basket{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.header__basket_label{
+    margin-top:10px;
+}
+
+.header__basket_quantity{
+    width: 0.4rem;
+    height: 0.4rem;
+    background: red;
+    border-radius: 50%;
+    padding: 0.5rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 2rem;
+    top: 0rem;
+}
+
+.header__basket_quantity span{
+    font-size:0.9rem;
+}
+
+.header_container{
+    width: 100%;
+     display:flex;
+     justify-content: space-between;
+     position: relative;
+}

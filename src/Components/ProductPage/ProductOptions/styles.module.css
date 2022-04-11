@@ -1,0 +1,33 @@
+.product_options{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.product_options__form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.product__container{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 900px) {
+    .product__image {
+     width:100% !important
+    }
+    .product__image img{
+        width:100%;
+    }
+    
+    .product__container{
+        display: block !important;
+        width:100% !important;
+    }
+
+  }
