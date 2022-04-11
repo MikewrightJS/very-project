@@ -1,10 +1,10 @@
 import React, {useState } from 'react';
-import styles from "./styles.module.css"
- import Logo from '../../Images/very-logo.svg'
-import Basket from '../../Images/basket.svg'
-import { Box } from '@mui/system'
+import styles from "./styles.module.css";
+import Logo from '../../Images/very-logo.svg';
+import Basket from '../../Images/basket.svg';
+import { Box } from '@mui/system';
 import {useSelector} from 'react-redux';
-import Cart from './../Cart'
+import Cart from './../Cart';
 
 
 const Header = () => {

@@ -1,12 +1,6 @@
 const getBasketItems = (state = false, action) =>{
-    switch(action.type){
-        case 'getBasketItems':
-            return action.payload;
-        default:
-            return state
-    }
+    return action.type === 'getBasketItems' ? action.payload : state;
 }
-
 export default getBasketItems
 
 

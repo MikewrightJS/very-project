@@ -14,7 +14,7 @@ const ProductPage = () => {
     const dispatch = useDispatch();
 
     const defaultProductFind = function getDefaultProduct(array) {
-      const variant = array.filter((item) => item.defaultImage == true);
+      const variant = array.filter((item) => item.defaultImage === true);
           return variant ? variant[0] : null;
     }
     
