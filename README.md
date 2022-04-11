@@ -12,9 +12,9 @@ I have used Redux on this project as a demonstration of being able to use it. Th
 
 Tests have been written in React testing library, test files are in their corresponding folders.
 
-### ESLint
+### MUI
 
-Eslint has been installed onto this project for style handling and consistency. 
+Material UI used in this project to show understanding in using it, combined with module css.
 
 ## Available Scripts
 
